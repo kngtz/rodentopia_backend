@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -160,3 +161,7 @@ CELERY_BROKER_URL = 'redis://h:peae6022c009ec133255c9c76c5a55961a8ac16eb4ddb18ee
 
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
+
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
