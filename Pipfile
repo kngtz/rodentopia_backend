@@ -8,8 +8,11 @@ verify_ssl = true
 [packages]
 django = "*"
 djangorestframework = "*"
-django-cors-header = "*"
+
 pillow = "*"
+django-celery = "*"
+django-crispy-forms = "*"
+django-cors-headers = "*"
 
 [requires]
 python_version = "3.6"

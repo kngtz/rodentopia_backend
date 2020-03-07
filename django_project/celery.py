@@ -1,4 +1,6 @@
 from __future__ import absolute_import, unicode_literals
+from django.conf import settings
+
 
 import os
 
@@ -13,10 +15,10 @@ app = Celery('django_project')
 # the configuration object to child processes.
 # - namespace='CELERY' means all celery-related configuration keys
 #   should have a `CELERY_` prefix.
-app.config_from_object('django.conf:settings', namespace='CELERY')
+app.config_from_object('django.conf:settings')
 
 # Load task modules from all registered Django app configs.
-app.autodiscover_tasks()
+app.autodiscover_tasks(settings.INSTALLED_APPS)
 
 
 @app.task(bind=True)
