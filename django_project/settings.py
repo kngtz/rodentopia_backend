@@ -99,16 +99,16 @@ REST_FRAMEWORK = {
 # if os.environ.get('DATABASE_URL'):
 DATABASES = {'default': dj_database_url.config(
     default='postgres://tjafycozcsiqzs:8f9a576e793fbe4f3bcc06dd0b887ea0454318c3f7d73085dcd3f48d606aee2a@ec2-54-80-184-43.compute-1.amazonaws.com:5432/d3k89ctqpr9dic')}
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'rodentopia',
-        'USER': 'rodentopiaadmin',
-        'PASSWORD': '123qwe',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'rodentopia',
+#         'USER': 'rodentopiaadmin',
+#         'PASSWORD': '123qwe',
+#         'HOST': 'localhost',
+#         'PORT': '',
+#     }
+# }
 
 
 # Password validation
