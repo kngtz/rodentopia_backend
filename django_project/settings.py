@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 import django_heroku
 import psycopg2
+import dj_database_url
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -95,8 +96,9 @@ REST_FRAMEWORK = {
 #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
-DATABASES['default'] = dj_database_url.config(
-    conn_max_age=600, ssl_require=True)
+# if os.environ.get('DATABASE_URL'):
+DATABASES = {'default': dj_database_url.config(
+    default='postgres://tjafycozcsiqzs:8f9a576e793fbe4f3bcc06dd0b887ea0454318c3f7d73085dcd3f48d606aee2a@ec2-54-80-184-43.compute-1.amazonaws.com:5432/d3k89ctqpr9dic')}
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
